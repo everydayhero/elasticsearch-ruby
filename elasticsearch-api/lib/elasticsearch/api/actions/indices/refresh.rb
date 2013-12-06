@@ -26,7 +26,7 @@ module Elasticsearch
         # @see http://www.elasticsearch.org/guide/reference/api/admin-indices-refresh/
         #
         def refresh(arguments={})
-          valid_params = [ :ignore_indices ]
+          valid_params = [ :ignore_indices, :consistency ]
 
           method = 'POST'
           path   = Utils.__pathify Utils.__listify(arguments[:index]), '_refresh'
